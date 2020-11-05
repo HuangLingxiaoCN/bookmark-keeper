@@ -1,0 +1,197 @@
+
+/* CSS variables*/
+:root {
+  --primary-color: #54759C;
+  --border-radius: 15px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='16' viewBox='0 0 84 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M78 7V4h-2v3h-3v2h3v3h2V9h3V7h-3zM30 7V4h-2v3h-3v2h3v3h2V9h3V7h-3zM10 0h2v16h-2V0zm6 0h4v16h-4V0zM2 0h4v16H2V0zm50 0h2v16h-2V0zM38 0h2v16h-2V0zm28 0h2v16h-2V0zm-8 0h6v16h-6V0zM42 0h6v16h-6V0z' fill='%23b6aac9' fill-opacity='0.39' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+h1 {
+  color: white;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none; /* The text cannot be selected*/
+}
+
+h1:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.item {
+  background-color: rgba(29, 51, 70, 0.8);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin: 20px;
+  text-align: center;
+}
+
+
+a {
+  color: green;
+  text-transform: uppercase;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: green;
+  text-decoration: underline;
+}
+
+/* Selected class should be .fa-trash-alt not .fas*/
+.fa-trash-alt {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.fa-times {
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Make the favicon and name in the bottom of bookmark box to seperate from del*/
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+/* Modal */
+.modal-container {
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.show-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%; /* For mobile device*/
+  width: 500px;
+  animation: modalOpen 1s; /* modalOpen animation*/
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.close-icon {
+  float: right;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  top: 13px;
+  right: 13px;
+  cursor: pointer;
+}
+
+.modal-header {
+  background: var(--primary-color);
+  color: white;
+  padding: 15px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  background: whitesmoke;
+}
+
+/* Form */
+.form-group {
+  height: 55px;
+}
+
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+}
+
+.form-label {
+  color: var(--primary-color);
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: var(--primary-color);
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
